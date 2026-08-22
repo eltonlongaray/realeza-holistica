@@ -1,0 +1,591 @@
+<title>Realeza Holística</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:wght@300;400;500;600;700;800&display=swap">
+
+<style>
+  /* ============================================================
+     REALEZA HOLÍSTICA — página de vendas (Consultoria Individual)
+     Mundo: realeza / celestial · obsidiana-ameixa + ouro + índigo
+     Committed single-world (dark premium), pintado explícito.
+     ============================================================ */
+  :root{
+    --night:    #100b18;   /* obsidiana-ameixa — o fundo               */
+    --night-2:  #180f24;   /* superfície elevada                       */
+    --night-3:  #221733;   /* card                                     */
+    --gold:     #d9a94b;   /* ouro — o acento da realeza               */
+    --gold-lite:#f2d798;
+    --royal:    #6a55a0;   /* índigo celestial — secundário, econômico */
+    --ivory:    #f0e7d8;   /* pergaminho — texto                       */
+    --ivory-dim:#d8cbb9;
+    --muted:    #a99ebd;   /* lavanda apagada — secundário             */
+    --line:     rgba(240,231,216,.12);
+    --line-2:   rgba(217,169,75,.32);
+    --good:     #7bbf8e;
+    --measure:  36rem;
+    --maxw:     70rem;
+  }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 70% at 50% -8%, #241634 0%, rgba(36,22,52,0) 55%),
+      radial-gradient(80% 50% at 84% 6%, rgba(217,169,75,.10) 0%, rgba(217,169,75,0) 55%),
+      var(--night);
+    color:var(--ivory);
+    font-family:"Mulish", ui-sans-serif, system-ui, sans-serif;
+    font-weight:400; line-height:1.72; letter-spacing:.004em;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  .wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1.4rem,5vw,3rem); }
+  .narrow{ max-width:var(--measure); margin-inline:auto; }
+
+  /* stars ambient */
+  .stars{ position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(242,215,152,.7), transparent),
+      radial-gradient(1px 1px at 70% 20%, rgba(240,231,216,.5), transparent),
+      radial-gradient(1px 1px at 40% 70%, rgba(242,215,152,.5), transparent),
+      radial-gradient(1.5px 1.5px at 85% 60%, rgba(240,231,216,.4), transparent),
+      radial-gradient(1px 1px at 55% 45%, rgba(242,215,152,.45), transparent);
+    background-size:100% 100%; opacity:.55; animation:twinkle 7s ease-in-out infinite;
+  }
+  @keyframes twinkle{ 0%,100%{ opacity:.35; } 50%{ opacity:.7; } }
+  @media (prefers-reduced-motion: reduce){ .stars{ animation:none; } }
+  main{ position:relative; z-index:1; }
+
+  /* ---- type ---- */
+  h1,h2,h3{ font-family:"DM Serif Display", Georgia, serif; font-weight:400; color:var(--ivory); text-wrap:balance; margin:0; line-height:1.08; letter-spacing:.005em; }
+  h1 em,h2 em,h3 em,.serif-i{ font-family:"DM Serif Display",serif; font-style:italic; color:var(--gold-lite); }
+  .eyebrow{ font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin:0; }
+  .eyebrow.royal{ color:var(--royal); }
+  p{ margin:0; }
+  .lede{ color:var(--muted); }
+
+  section{ position:relative; padding-block:clamp(3.2rem,8vw,6rem); }
+  .divider{ height:1px; background:linear-gradient(90deg,transparent,var(--line-2),transparent); max-width:60rem; margin-inline:auto; }
+
+  /* ---- buttons ---- */
+  .btn{ display:inline-flex; align-items:center; gap:.6rem; font-family:inherit; font-size:1rem; font-weight:700; letter-spacing:.01em;
+    padding:1em 1.9em; border-radius:999px; cursor:pointer; text-decoration:none; border:1px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease; }
+  .btn-gold{ background:linear-gradient(180deg,var(--gold-lite),var(--gold)); color:#2a1c05; box-shadow:0 14px 40px -14px rgba(217,169,75,.6); }
+  .btn-gold:hover{ transform:translateY(-2px); box-shadow:0 20px 50px -14px rgba(217,169,75,.75); }
+  .btn-ghost{ color:var(--ivory); border-color:var(--line-2); }
+  .btn-ghost:hover{ border-color:var(--gold-lite); color:var(--gold-lite); transform:translateY(-2px); }
+  .btn:focus-visible{ outline:2px solid var(--gold-lite); outline-offset:3px; }
+  .todo{ border-bottom:1px dashed var(--gold); color:var(--gold-lite); cursor:help; }
+
+  /* ============================ HERO ============================ */
+  .hero{ text-align:center; padding-top:clamp(3rem,7vw,5.5rem); padding-bottom:clamp(2.5rem,6vw,4rem); }
+  .crest{ font-size:2.4rem; line-height:1; margin-bottom:1.4rem; filter:drop-shadow(0 4px 18px rgba(217,169,75,.4)); }
+  .kicker{ display:inline-flex; align-items:center; gap:.7rem; border:1px solid var(--line-2); border-radius:999px;
+    padding:.5em 1.1em; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-lite); font-weight:600; margin-bottom:clamp(1.6rem,4vw,2.2rem); }
+  .hero h1{ font-size:clamp(2.5rem,7.2vw,5rem); max-width:16ch; margin-inline:auto; }
+  .hero h1 .und{ display:inline-block; margin-top:.12em; text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:2px; text-underline-offset:.16em; }
+  .hero .lede{ max-width:40rem; margin:clamp(1.5rem,4vw,2rem) auto 0; font-size:clamp(1.05rem,2.4vw,1.22rem); line-height:1.6; color:var(--ivory-dim); }
+  .cta-row{ display:flex; gap:.9rem; flex-wrap:wrap; justify-content:center; margin-top:clamp(2rem,5vw,2.6rem); }
+  .sems{ display:flex; flex-wrap:wrap; gap:.5rem .9rem; justify-content:center; margin-top:clamp(2rem,4vw,2.4rem); color:var(--muted); font-size:.85rem; }
+  .sems span{ display:inline-flex; align-items:center; gap:.4rem; }
+  .sems b{ color:var(--gold-lite); font-weight:800; }
+
+  /* ============================ THESIS ============================ */
+  .thesis{ text-align:center; }
+  .thesis blockquote{ margin:0; font-family:"DM Serif Display",serif; font-style:italic; font-size:clamp(1.5rem,4vw,2.4rem); line-height:1.4; color:var(--ivory); max-width:24ch; margin-inline:auto; }
+  .thesis .who{ margin-top:1.4rem; font-size:.8rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+
+  /* ============================ SECTION HEAD ============================ */
+  .shead{ text-align:center; max-width:44rem; margin:0 auto clamp(2.2rem,5vw,3.2rem); }
+  .shead h2{ font-size:clamp(1.9rem,4.8vw,3rem); margin-top:.8rem; }
+  .shead .lede{ margin-top:1.1rem; font-size:1.05rem; }
+
+  /* ============================ STAGES (labirinto / mapa) ============================ */
+  .stages{ display:flex; flex-direction:column; gap:1rem; max-width:46rem; margin-inline:auto; }
+  .stage{ display:grid; grid-template-columns:auto 1fr; gap:1.2rem; align-items:start;
+    background:linear-gradient(180deg,var(--night-2),var(--night)); border:1px solid var(--line); border-radius:16px; padding:clamp(1.2rem,3vw,1.6rem) clamp(1.3rem,3vw,1.8rem); }
+  .stage .mk{ font-family:"DM Serif Display",serif; font-size:1.1rem; letter-spacing:.02em; width:2.8rem; height:2.8rem; display:grid; place-items:center; border-radius:50%; border:1px solid var(--line-2); color:var(--gold-lite); flex:none; }
+  .stage.up .mk{ color:var(--good); border-color:rgba(123,191,142,.4); }
+  .stage h3{ font-size:1.25rem; margin-bottom:.3rem; }
+  .stage p{ color:var(--muted); font-size:.98rem; }
+
+  /* ============================ MECANISMO ÚNICO ============================ */
+  .unique{ background:
+      radial-gradient(90% 120% at 50% 0%, rgba(106,85,160,.16), rgba(106,85,160,0) 60%),
+      linear-gradient(180deg,var(--night-2),var(--night)); border-block:1px solid var(--line); }
+  .diffs{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; max-width:52rem; margin-inline:auto; }
+  .diff{ background:var(--night-3); border:1px solid var(--line); border-radius:16px; padding:clamp(1.3rem,3vw,1.7rem); }
+  .diff .n{ font-family:"DM Serif Display",serif; font-style:italic; color:var(--gold); font-size:1.1rem; }
+  .diff h3{ font-size:1.15rem; margin:.4rem 0 .5rem; }
+  .diff p{ color:var(--muted); font-size:.95rem; }
+  /* mecanismo único em tópicos */
+  .topics{ max-width:46rem; margin-inline:auto; display:flex; flex-direction:column; }
+  .topic{ display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:start; padding:1.2rem .3rem; border-bottom:1px solid var(--line); }
+  .topic:last-child{ border-bottom:0; }
+  .topic .b{ color:var(--gold); font-size:1.1rem; line-height:1.5; }
+  .topic h3{ font-size:1.12rem; margin-bottom:.25rem; }
+  .topic p{ color:var(--muted); font-size:.96rem; }
+  /* bloco revelável — valor do método completo */
+  .reveal{ max-width:40rem; margin:1.6rem auto 0; border:1px solid var(--line-2); border-radius:16px; background:var(--night-2); overflow:hidden; }
+  .reveal summary{ cursor:pointer; list-style:none; padding:1.1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; font-weight:700; color:var(--gold-lite); font-size:1.02rem; }
+  .reveal summary::-webkit-details-marker{ display:none; }
+  .reveal summary::after{ content:"+"; font-family:"DM Serif Display",serif; font-size:1.5rem; color:var(--gold); line-height:1; }
+  .reveal[open] summary::after{ content:"\2013"; }
+  .reveal summary:focus-visible{ outline:2px solid var(--gold-lite); outline-offset:-3px; }
+  .reveal .panel{ padding:.4rem 1.5rem 1.6rem; }
+  .reveal .grp{ margin-top:1.3rem; }
+  .reveal .grp .lbl{ font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.7rem; }
+  .reveal .grp.bonus-grp .lbl{ color:var(--royal); }
+  .reveal .item{ display:flex; gap:.6rem; align-items:flex-start; padding:.42rem 0; color:var(--ivory-dim); font-size:.95rem; }
+  .reveal .item svg{ flex:none; margin-top:.35rem; }
+  .reveal .item b{ color:var(--ivory); font-weight:700; }
+  .trade-note{ max-width:40rem; margin:0 auto; text-align:center; color:var(--ivory-dim); font-size:1.02rem; line-height:1.6; }
+  .trade-note strong{ color:var(--gold-lite); font-weight:700; }
+  /* bullets dentro de uma etapa */
+  .stage ul.pts{ margin:.5rem 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:.55rem; }
+  .stage ul.pts li{ display:flex; gap:.55rem; align-items:flex-start; color:var(--muted); font-size:.96rem; }
+  .stage ul.pts li svg{ flex:none; margin-top:.4rem; }
+  .stage ul.pts li.warn{ color:var(--ivory); }
+  .stage ul.pts li.warn b{ color:var(--gold-lite); font-weight:700; }
+  /* selo permuta */
+  .permuta{ display:inline-block; margin-top:.7rem; font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; font-weight:800;
+    color:#2a1c05; background:linear-gradient(180deg,var(--gold-lite),var(--gold)); padding:.35em .8em; border-radius:999px; }
+  /* resumo de preço dentro do revelável */
+  .reveal .pricesum{ margin-top:1.3rem; border-top:1px solid var(--line-2); padding-top:1.1rem; }
+  .reveal .pl{ display:flex; justify-content:space-between; gap:1rem; align-items:baseline; padding:.45rem 0; font-size:.98rem; }
+  .reveal .pl .k{ color:var(--ivory-dim); }
+  .reveal .pl .v{ font-variant-numeric:tabular-nums; color:var(--muted); font-weight:600; white-space:nowrap; }
+  .reveal .pl .v s{ color:var(--muted); text-decoration-color:var(--line-2); }
+  .reveal .pl.discount .v{ color:var(--ivory); }
+  .reveal .pl.final{ border-top:1px solid var(--line-2); margin-top:.5rem; padding-top:.9rem; align-items:baseline; }
+  .reveal .pl.final .k{ color:var(--ivory); font-weight:700; }
+  .reveal .pl.final .v{ font-family:"DM Serif Display",serif; font-size:1.6rem; color:var(--gold-lite); }
+  .reveal .fineprint{ margin-top:.9rem; font-size:.82rem; color:var(--muted); line-height:1.5; }
+  .permuta-box{ margin-top:1.2rem; background:rgba(217,169,75,.08); border:1px solid var(--line-2); border-radius:14px; padding:1rem 1.2rem; }
+  .permuta-box p{ color:var(--ivory-dim); font-size:.96rem; line-height:1.55; }
+  .permuta-box p strong{ color:var(--gold-lite); font-weight:700; }
+  .permuta-box .sub{ margin-top:.55rem; font-size:.88rem; color:var(--muted); }
+  /* linha de pilar em permuta (pacote de massagens) */
+  .reveal .pl.pacote{ opacity:.85; }
+  .reveal .pl.pacote .k s{ color:var(--muted); text-decoration-color:var(--line-2); }
+  .reveal .pl.pacote .v{ text-align:right; font-weight:400; }
+  .reveal .pl.pacote .v s{ color:var(--muted); text-decoration-color:var(--line-2); }
+  .reveal .pl.pacote .v .pk{ display:block; color:var(--gold-lite); font-weight:700; font-size:.78rem; letter-spacing:.02em; margin-top:.15rem; }
+  /* caixa de bônus com destaque */
+  .bonusbox{ margin-top:1.4rem; border:1px solid var(--gold); border-radius:16px; background:radial-gradient(120% 100% at 50% 0%, rgba(217,169,75,.16), rgba(217,169,75,.06)); padding:1.2rem 1.3rem; }
+  .bonusbox .bonuslbl{ font-family:"DM Serif Display",serif; color:var(--gold-lite); font-size:1.2rem; margin-bottom:.7rem; }
+  .bonusbox .item{ color:var(--ivory); }
+  .bonusbox .item b{ color:var(--gold-lite); }
+  /* seção Quanto Vale */
+  .valuelist{ max-width:44rem; margin:0 auto; display:flex; flex-direction:column; }
+  .valuelist .v-item{ display:flex; gap:.95rem; align-items:center; padding:1.05rem .3rem; border-bottom:1px solid var(--line); font-size:clamp(1rem,2.4vw,1.14rem); color:var(--ivory); }
+  .valuelist .v-item:last-child{ border-bottom:0; }
+  .valuelist .v-item .ic{ font-size:1.35rem; flex:none; line-height:1; }
+  .worth-note{ max-width:40rem; margin:2.2rem auto 0; text-align:center; font-family:"DM Serif Display",serif; font-style:italic; font-size:clamp(1.2rem,3vw,1.65rem); line-height:1.45; color:var(--gold-lite); text-wrap:balance; }
+  /* mitos × estrutura */
+  .contrast{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; max-width:54rem; margin-inline:auto; }
+  .c-card{ border:1px solid var(--line); border-radius:18px; padding:clamp(1.4rem,3vw,1.9rem); background:linear-gradient(180deg,var(--night-2),var(--night)); }
+  .c-card.wins{ border-color:var(--line-2); }
+  .c-card .c-lbl{ font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; margin-bottom:1.1rem; font-weight:700; }
+  .c-card.myths .c-lbl{ color:var(--muted); }
+  .c-card.wins .c-lbl{ color:var(--gold); }
+  .c-card ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.8rem; }
+  .c-card li{ display:flex; gap:.6rem; align-items:flex-start; font-size:.98rem; line-height:1.4; }
+  .c-card.myths li{ color:var(--muted); }
+  .c-card.myths li .x{ color:#b57a86; flex:none; font-weight:700; }
+  .c-card.myths li s{ text-decoration-color:rgba(181,122,134,.5); }
+  .c-card.wins li{ color:var(--ivory); }
+  .c-card.wins li .ck{ flex:none; margin-top:.25rem; }
+  @media (max-width:680px){ .contrast{ grid-template-columns:1fr; } }
+  /* benefícios */
+  .benefits{ max-width:44rem; margin-inline:auto; display:grid; grid-template-columns:1fr 1fr; gap:.2rem 1.8rem; }
+  .benefits .bf{ display:flex; gap:.6rem; align-items:center; color:var(--ivory); font-size:1.02rem; padding:.8rem 0; border-bottom:1px solid var(--line); }
+  .benefits .bf svg{ flex:none; }
+  @media (max-width:600px){ .benefits{ grid-template-columns:1fr; } }
+  /* jornada / caminho vertical (mobile-first) */
+  .journey{ max-width:38rem; margin:0 auto; }
+  .stop{ position:relative; display:grid; grid-template-columns:2.7rem 1fr; gap:1.1rem; padding-bottom:1.8rem; }
+  .stop:last-child{ padding-bottom:0; }
+  .stop::before{ content:""; position:absolute; left:1.35rem; top:2.7rem; bottom:0; width:2px; background:linear-gradient(180deg,var(--line-2),var(--line)); transform:translateX(-1px); }
+  .stop:last-child::before{ display:none; }
+  .node{ position:relative; z-index:1; width:2.7rem; height:2.7rem; border-radius:50%; display:grid; place-items:center;
+    font-family:"DM Serif Display",serif; font-size:1.1rem; color:var(--gold-lite); background:var(--night-2); border:1px solid var(--line-2); }
+  .stop.start .node, .stop.finish .node{ font-size:1.2rem; background:radial-gradient(circle at 50% 35%, rgba(217,169,75,.3), var(--night-2)); border-color:var(--gold); }
+  .stop-body{ padding-top:.2rem; }
+  .stop-body h3{ font-size:1.18rem; }
+  .stop-body p{ color:var(--muted); font-size:.95rem; margin-top:.25rem; }
+  .stop-body .permuta{ margin-top:.55rem; }
+  .stop-body ul{ list-style:none; margin:.5rem 0 0; padding:0; display:flex; flex-direction:column; gap:.42rem; }
+  .stop-body ul li{ display:flex; gap:.55rem; color:var(--muted); font-size:.93rem; line-height:1.4; }
+  .stop-body ul li::before{ content:"✦"; color:var(--gold-lite); font-size:.66rem; line-height:1.7; flex:none; }
+  .journey-foot{ max-width:34rem; margin:2.2rem auto 0; text-align:center; color:var(--ivory-dim); font-size:1.02rem; line-height:1.5; border-top:1px solid var(--line); padding-top:1.6rem; }
+  .journey-foot b{ color:var(--gold-lite); }
+
+  /* ============================ TRANSFORMAÇÃO ============================ */
+  .transform{ display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(1rem,3vw,2rem); align-items:center; max-width:52rem; margin-inline:auto; }
+  .tcard{ background:linear-gradient(180deg,var(--night-2),var(--night)); border:1px solid var(--line); border-radius:18px; padding:clamp(1.4rem,3.5vw,2rem); }
+  .tcard .lbl{ font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
+  .tcard.to{ border-color:var(--line-2); box-shadow:0 20px 50px -24px rgba(217,169,75,.4); }
+  .tcard.to .lbl{ color:var(--gold); }
+  .tcard h3{ font-size:1.35rem; margin-top:.7rem; }
+  .tcard p{ color:var(--muted); font-size:.95rem; margin-top:.5rem; }
+  .arrow{ font-size:1.6rem; color:var(--gold); text-align:center; }
+  @media (max-width:680px){ .transform{ grid-template-columns:1fr; } .arrow{ transform:rotate(90deg); } }
+
+  /* ============================ ENTREGA (pilares) ============================ */
+  .pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+  .pillar{ background:var(--night-2); border:1px solid var(--line); border-radius:16px; padding:clamp(1.3rem,3vw,1.7rem); display:flex; flex-direction:column; gap:.5rem; }
+  .pillar .ph{ display:flex; align-items:baseline; gap:.6rem; }
+  .pillar .ph .fase{ font-family:"DM Serif Display",serif; font-style:italic; color:var(--gold); font-size:1.4rem; }
+  .pillar h3{ font-size:1.1rem; }
+  .pillar p{ color:var(--muted); font-size:.92rem; }
+  .delivery-meta{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem; }
+  .chip{ border:1px solid var(--line-2); border-radius:999px; padding:.6em 1.2em; font-size:.85rem; color:var(--ivory-dim); }
+  .chip b{ color:var(--gold-lite); }
+  @media (max-width:800px){ .pillars{ grid-template-columns:1fr; } .diffs{ grid-template-columns:1fr; } }
+
+  /* ============================ OFERTA / STACK ============================ */
+  .offer{ background:
+      radial-gradient(80% 120% at 50% 0%, rgba(217,169,75,.14), rgba(217,169,75,0) 55%),
+      linear-gradient(180deg,var(--night-3),var(--night-2)); border:1px solid var(--line-2); border-radius:26px;
+    padding:clamp(2rem,5vw,3.4rem); max-width:44rem; margin-inline:auto; }
+  .ledger{ display:flex; flex-direction:column; gap:.2rem; margin:1.5rem 0; }
+  .ledger .li{ display:flex; justify-content:space-between; gap:1rem; align-items:baseline; padding:.7rem 0; border-bottom:1px solid var(--line); font-size:1rem; }
+  .ledger .li span:first-child{ color:var(--ivory-dim); }
+  .ledger .li .v{ font-variant-numeric:tabular-nums; color:var(--muted); font-weight:600; }
+  .ledger .total{ display:flex; justify-content:space-between; align-items:baseline; padding-top:1rem; margin-top:.3rem; }
+  .ledger .total .lbl{ font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .ledger .total .val{ font-family:"DM Serif Display",serif; font-size:1.7rem; color:var(--ivory-dim); text-decoration:line-through; text-decoration-color:var(--line-2); }
+  .price-box{ text-align:center; margin-top:1.6rem; }
+  .price-box .anchor{ color:var(--muted); font-size:1rem; }
+  .price-box .anchor s{ text-decoration-color:var(--line-2); }
+  .price-box .big{ font-family:"DM Serif Display",serif; font-size:clamp(3rem,10vw,4.6rem); color:var(--gold-lite); line-height:1; margin:.3rem 0; }
+  .price-box .terms{ color:var(--muted); font-size:.95rem; }
+  .guarantee{ display:flex; flex-wrap:wrap; gap:.5rem .8rem; justify-content:center; margin-top:1.8rem; }
+  .guarantee .g{ display:inline-flex; align-items:center; gap:.45rem; font-size:.85rem; color:var(--ivory-dim); }
+  .guarantee .g svg{ flex:none; }
+
+  /* ============================ BÔNUS ============================ */
+  .bonuses{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; max-width:56rem; margin-inline:auto; }
+  .bonus{ background:linear-gradient(180deg, rgba(106,85,160,.12), rgba(16,11,24,0)); border:1px solid var(--line); border-radius:16px; padding:clamp(1.3rem,3vw,1.7rem); }
+  .bonus .tag{ font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--royal); font-weight:700; }
+  .bonus h3{ font-size:1.05rem; margin:.5rem 0; }
+  .bonus p{ color:var(--muted); font-size:.9rem; }
+  @media (max-width:800px){ .bonuses{ grid-template-columns:1fr; } }
+
+  /* ============================ AUTORIDADE ============================ */
+  .author{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1.4rem,4vw,2.4rem); align-items:center; max-width:52rem; margin-inline:auto;
+    background:linear-gradient(180deg,var(--night-2),var(--night)); border:1px solid var(--line); border-radius:22px; padding:clamp(1.6rem,4vw,2.6rem); }
+  .avatar{ width:clamp(5rem,16vw,8rem); height:clamp(5rem,16vw,8rem); border-radius:50%; border:1px solid var(--line-2);
+    display:grid; place-items:center; font-size:2.4rem; background:radial-gradient(circle at 50% 35%, rgba(217,169,75,.2), rgba(16,11,24,.6)); flex:none; }
+  .author h3{ font-size:1.6rem; }
+  .author .role{ color:var(--gold); font-size:.85rem; letter-spacing:.14em; text-transform:uppercase; margin:.3rem 0 .8rem; }
+  .author p{ color:var(--ivory-dim); font-size:.98rem; }
+  @media (max-width:600px){ .author{ grid-template-columns:1fr; text-align:center; justify-items:center; } }
+
+  /* ============================ SOCIAL PROOF (placeholder) ============================ */
+  .proof-note{ max-width:46rem; margin-inline:auto; text-align:center; border:1px dashed var(--line-2); border-radius:16px; padding:1.6rem; color:var(--muted); font-size:.95rem; }
+
+  /* ============================ FINAL CTA ============================ */
+  .final{ text-align:center; }
+  .final h2{ font-size:clamp(2rem,5.5vw,3.4rem); max-width:18ch; margin-inline:auto; }
+  .final .lede{ max-width:38rem; margin:1.2rem auto clamp(1.8rem,4vw,2.4rem); }
+
+  footer{ text-align:center; padding:clamp(2.5rem,6vw,4rem) 0; color:var(--muted); border-top:1px solid var(--line); }
+  footer .name{ font-family:"DM Serif Display",serif; font-size:1.4rem; color:var(--ivory); }
+  footer .meta{ margin-top:.5rem; font-size:.85rem; letter-spacing:.04em; }
+  footer a{ color:var(--gold-lite); text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+</style>
+
+<div class="stars" aria-hidden="true"></div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="crest" aria-hidden="true">👑</div>
+      <div class="kicker">Realeza Holística &middot; para terapeutas holísticos</div>
+      <h1>Sua terapia é holística!<br>Seu <em>negócio</em><br><span class="und">ainda não é...</span></h1>
+      <p class="lede">A consultoria individual que transforma o terapeuta preso no 1 a 1 em <strong>Empreendedor Holístico Digital</strong> — vendendo na internet todos os dias, sem virar refém das redes.</p>
+      <div class="sems">
+        <span>✦ Sem postar todo dia</span>
+        <span>✦ Sem precisar aparecer</span>
+        <span>✦ Sem lives toda semana</span>
+        <span>✦ Sem gerenciador de anúncios</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- ============ GRANDE TESE ============ -->
+  <section class="thesis">
+    <div class="wrap">
+      <blockquote>“Ser livre é viver o seu propósito, impactar vidas e prosperar com equilíbrio e abundância.”</blockquote>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============ O PROBLEMA (labirinto) ============ -->
+  <section id="metodo">
+    <div class="wrap">
+      <div class="shead">
+        <p class="eyebrow">O labirinto</p>
+        <h2>Pra que tanto esforço para tão pouco <em>tempo livre</em>?</h2>
+        <p class="lede">A agenda vive cheia e o dinheiro entra — só que cada real vem em troca das horas que você queria estar viajando, descansando, vivendo a vida. Todo terapeuta preso no 1 a 1 passa por estas quatro etapas:</p>
+      </div>
+      <div class="stages">
+        <div class="stage"><div class="mk">I</div><div><h3>Visão limitada</h3><p>Você foca só no atendimento e na criação de conteúdo, sem enxergar todas as áreas que sustentam um negócio digital. As ações ficam fragmentadas.</p></div></div>
+        <div class="stage"><div class="mk">II</div><div><h3>Bloqueio criativo</h3><p>Muito conhecimento acumulado, nenhum método pra transformar isso em conteúdo que vende. As ideias não fluem, a insegurança paralisa e a comunicação trava.</p></div></div>
+        <div class="stage"><div class="mk">III</div><div><h3>Sobrecarga</h3><p>Sem um plano, você compensa fazendo tudo ao mesmo tempo: atende, responde direct, tenta aparecer o tempo todo. O tempo se esgota, o cansaço se acumula e, quanto mais você corre sozinho, mais preso fica num ciclo improdutivo — e o resultado de liberdade que você espera não vem.</p></div></div>
+        <div class="stage"><div class="mk">IV</div><div><h3>Falta de previsibilidade</h3>
+          <ul class="pts">
+            <li><svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.3" fill="#d9a94b"/></svg>Refém dos atendimentos individuais — todo faturamento depende do seu corpo na maca.</li>
+            <li><svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.3" fill="#d9a94b"/></svg>Meses bons imprevisíveis; meses ruins trazem medo.</li>
+            <li><svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.3" fill="#d9a94b"/></svg>Ficou doente? Não trabalha, não recebe.</li>
+            <li><svg width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.3" fill="#d9a94b"/></svg>Seu conhecimento é uma única fonte de renda que devora o seu tempo de vida.</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A SOLUÇÃO (mapa / ascensão) ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead">
+        <p class="eyebrow" style="color:var(--good)">O mapa</p>
+        <h2>A saída existe — e é <em>holística</em></h2>
+        <p class="lede">Quando você passa a enxergar o negócio como um ecossistema, cada área trabalha a seu favor. É a mesma visão holística que você usa no atendimento, aplicada à sua marca.</p>
+      </div>
+      <div class="stages">
+        <div class="stage up"><div class="mk">✦</div><div><h3>Visão holística empresarial</h3><p>Presença digital, experiência do cliente e estratégia de vendas alinhadas. Você sai do caos e assume o controle do crescimento.</p></div></div>
+        <div class="stage up"><div class="mk">✦</div><div><h3>Clareza mental</h3><p>Seu método vira produtos digitais escaláveis — do ticket baixo ao high ticket — com automações inteligentes que trabalham por você.</p></div></div>
+        <div class="stage up"><div class="mk">✦</div><div><h3>Asas para crescer</h3><p>Criar menos conteúdo, com alto poder de conversão — e nunca mais travar diante da tela em branco. Atrair um público qualificado sem precisar aparecer o tempo todo.</p></div></div>
+        <div class="stage up"><div class="mk">✦</div><div><h3>Previsibilidade financeira</h3><p>Um funil que capta e converte, múltiplas fontes de receita, e a tranquilidade de saber que o dinheiro continua entrando — independente da sua agenda.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRANSFORMAÇÃO ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead"><p class="eyebrow">A virada</p><h2>Quem entra &mdash; e quem sai</h2></div>
+      <div class="transform">
+        <div class="tcard"><p class="lbl">Antes</p><h3>Terapeuta de atendimento</h3><p>Apaixonado pelo que faz, mas sem saber vender com fluidez na internet. Preso no tempo por dinheiro.</p></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="tcard to"><p class="lbl">Depois</p><h3>Empreendedor Holístico Digital</h3><p>Com um plano de ação objetivo pra transformar a terapia em produtos digitais escaláveis, sem limites de ganho.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============ MITOS × ESTRUTURA ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead">
+        <p class="eyebrow">Esqueça as fórmulas de sempre</p>
+        <h2>O que todo mundo diz que você precisa <em>não é verdade</em></h2>
+      </div>
+      <div class="contrast">
+        <div class="c-card myths">
+          <p class="c-lbl">As "soluções" que repetem por aí</p>
+          <ul>
+            <li><span class="x" aria-hidden="true">✕</span><s>Postar conteúdo todos os dias.</s></li>
+            <li><span class="x" aria-hidden="true">✕</span><s>Aparecer nos stories toda hora.</s></li>
+            <li><span class="x" aria-hidden="true">✕</span><s>Fazer live toda semana.</s></li>
+            <li><span class="x" aria-hidden="true">✕</span><s>Focar no gerenciador de anúncios.</s></li>
+            <li><span class="x" aria-hidden="true">✕</span><s>Correr atrás de muitos seguidores.</s></li>
+          </ul>
+        </div>
+        <div class="c-card wins">
+          <p class="c-lbl">A estrutura digital que te liberta do 1 a 1</p>
+          <ul>
+            <li><svg class="ck" width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem postar todo dia.</li>
+            <li><svg class="ck" width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem precisar aparecer.</li>
+            <li><svg class="ck" width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem fazer lives toda semana.</li>
+            <li><svg class="ck" width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem ficar refém das redes.</li>
+            <li><svg class="ck" width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem gerenciador de anúncios.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFÍCIOS ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead">
+        <p class="eyebrow">Benefícios e resultados</p>
+        <h2>O que isso te entrega</h2>
+      </div>
+      <div class="benefits">
+        <div class="bf"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Posicionamento de marca único.</div>
+        <div class="bf"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Mecanismo único de vendas.</div>
+        <div class="bf"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Esteira de produtos digitais.</div>
+        <div class="bf"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Conteúdos que geram vendas imediatas.</div>
+        <div class="bf"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Automação e processos inteligentes.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============ ENTREGA (6 pilares) ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead">
+        <p class="eyebrow">O que vamos construir juntos</p>
+        <h2>6 pilares. 15 fases. 16 semanas.</h2>
+        <p class="lede">4 meses de consultoria individual, 100% personalizada — construindo o seu negócio holístico fase por fase.</p>
+      </div>
+      <div class="journey">
+        <div class="stop start">
+          <div class="node" aria-hidden="true">✦</div>
+          <div class="stop-body"><h3>Início</h3><p>Onde você está hoje: presa no atendimento 1 a 1.</p></div>
+        </div>
+        <div class="stop">
+          <div class="node">1</div>
+          <div class="stop-body"><h3>Identidade de marca</h3><ul><li>Seu arquétipo de marca</li><li>Princípios e valores</li><li>A linguagem que é a sua cara</li></ul><span class="permuta">Você troca por massagens</span></div>
+        </div>
+        <div class="stop">
+          <div class="node">2</div>
+          <div class="stop-body"><h3>Mecanismo de vendas</h3><ul><li>Seu público e as dores dele</li><li>As crenças que travam a venda</li><li>Seu mecanismo único</li></ul><span class="permuta">Você troca por massagens</span></div>
+        </div>
+        <div class="stop">
+          <div class="node">3</div>
+          <div class="stop-body"><h3>Posicionamento</h3><ul><li>Sua grande tese</li><li>Narrativa e pitch de elevador</li><li>Bio magnética de Instagram</li></ul><span class="permuta">Você troca por massagens</span></div>
+        </div>
+        <div class="stop">
+          <div class="node">4</div>
+          <div class="stop-body"><h3>Produto high ticket</h3><ul><li>Seu programa premium, do zero à oferta</li><li>Precificação e ancoragem de valor</li><li>Promessa e transformação irresistíveis</li></ul></div>
+        </div>
+        <div class="stop">
+          <div class="node">5</div>
+          <div class="stop-body"><h3>Produto de entrada</h3><ul><li>A isca que abre a porta</li><li>Fácil pro cliente dizer sim</li><li>O trampolim pro seu programa maior</li></ul></div>
+        </div>
+        <div class="stop">
+          <div class="node">6</div>
+          <div class="stop-body"><h3>Jornada de vendas</h3><ul><li>Arquitetura de conteúdo com funil de vendas integrado</li><li>Reels e carrossel que vendem</li><li>Página de vendas e checkout</li><li>Automação</li></ul></div>
+        </div>
+        <div class="stop finish">
+          <div class="node" aria-hidden="true">👑</div>
+          <div class="stop-body"><h3>Chegada</h3><p>Sua marca no ar, vendendo no digital todos os dias.</p></div>
+        </div>
+      </div>
+      <p class="journey-foot"><b>4 meses de acompanhamento</b> — suporte por WhatsApp e videochamada quando necessário.</p>
+    </div>
+  </section>
+
+  <!-- ============ QUANTO VALE ============ -->
+  <section>
+    <div class="wrap">
+      <div class="shead">
+        <p class="eyebrow">Antes do preço</p>
+        <h2>Quanto vale?</h2>
+      </div>
+      <div class="valuelist">
+        <div class="v-item"><span class="ic" aria-hidden="true">🚀</span>Escalar suas vendas sem depender do 1 a 1.</div>
+        <div class="v-item"><span class="ic" aria-hidden="true">🙂</span>Crescer no digital sem ficar preso nas telas.</div>
+        <div class="v-item"><span class="ic" aria-hidden="true">🔥</span>Ter um posicionamento forte e magnético.</div>
+        <div class="v-item"><span class="ic" aria-hidden="true">💰</span>Criar um fluxo contínuo de vendas previsíveis.</div>
+        <div class="v-item"><span class="ic" aria-hidden="true">🌟</span>Ter clientes certos buscando pelo seu trabalho.</div>
+      </div>
+      <p class="worth-note">Sinceramente? Eu nem saberia te dizer o preço disso — porque o que posso te entregar vai muito além do que está sendo cobrado.</p>
+    </div>
+  </section>
+
+  <!-- ============ OFERTA / VALUE STACK ============ -->
+  <section id="vaga">
+    <div class="wrap">
+      <div class="shead">
+        <p class="eyebrow">A proposta</p>
+        <h2>Como você começa <em>hoje</em></h2>
+      </div>
+      <div class="offer">
+        <p class="trade-note">Você viu o método completo aí em cima. Os <strong>Pilares 1, 2 e 3</strong> — a base da sua marca — você <strong>troca por massagens</strong>. O restante é onde a virada de verdade acontece. Quer ver quanto vale cada pilar?</p>
+
+        <details class="reveal">
+          <summary>Ver o valor de cada pilar</summary>
+          <div class="panel">
+            <div class="grp">
+              <p class="lbl">O valor de cada um dos 6 pilares</p>
+              <div class="pl pacote"><span class="k"><s>1 &middot; Identidade de marca</s></span><span class="v"><s>R$ 1.500</s><span class="pk">Pacote de Massagens</span></span></div>
+              <div class="pl pacote"><span class="k"><s>2 &middot; Mecanismo de vendas</s></span><span class="v"><s>R$ 1.500</s><span class="pk">Pacote de Massagens</span></span></div>
+              <div class="pl pacote"><span class="k"><s>3 &middot; Posicionamento</s></span><span class="v"><s>R$ 2.000</s><span class="pk">Pacote de Massagens</span></span></div>
+              <div class="pl"><span class="k">4 &middot; Produto high ticket</span><span class="v">R$ 2.500</span></div>
+              <div class="pl"><span class="k">5 &middot; Produto de entrada</span><span class="v">R$ 2.500</span></div>
+              <div class="pl"><span class="k">6 &middot; Jornada de vendas</span><span class="v">R$ 5.000</span></div>
+            </div>
+            <div class="pricesum">
+              <div class="pl"><span class="k">Valor máximo da mentoria</span><span class="v"><s>R$ 15.000</s></span></div>
+              <div class="pl final"><span class="k">Você investe</span><span class="v">R$ 10.000</span></div>
+            </div>
+            <div class="permuta-box">
+              <p>Os <strong>Pilares 1, 2 e 3</strong> você <strong>troca por um pacote de massagens</strong> (a partir de 10). Eles valem R$ 5.000, mas eu faço na permuta por quantas massagens você estiver disposta a trocar.</p>
+              <p class="sub">O restante você combina comigo: à vista com desconto ou parcelado.</p>
+            </div>
+            <div class="bonusbox">
+              <p class="bonuslbl">🎁 Ainda leva de bônus</p>
+              <div class="item"><svg width="15" height="15" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Mil seguidores</b> em menos de 1 mês, do jeito certo</span></div>
+              <div class="item"><svg width="15" height="15" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Script de direct</b> que transforma seguidor em cliente comprador</span></div>
+              <div class="item"><svg width="15" height="15" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Sua landing page profissional</b>, pronta e no ar, ao final do método</span></div>
+            </div>
+          </div>
+        </details>
+
+        <div class="cta-row" style="justify-content:center; margin-top:1.8rem;">
+          <a class="btn btn-gold" href="https://wa.me/5551982276577?text=Oi%20Elton!%20Vim%20pela%20pagina%20da%20Realeza%20Holistica%20e%20quero%20ter%20mais%20tempo%20livre" target="_blank" rel="noopener">Quero ter mais tempo livre</a>
+        </div>
+
+        <div class="guarantee" style="margin-top:1.8rem;">
+          <span class="g"><svg width="15" height="15" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Sem postar todo dia</span>
+          <span class="g"><svg width="15" height="15" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Sem precisar aparecer</span>
+          <span class="g"><svg width="15" height="15" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Sem lives toda semana</span>
+          <span class="g"><svg width="15" height="15" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" stroke="#d9a94b" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Sem gerenciador de anúncios</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============ AUTORIDADE ============ -->
+  <section>
+    <div class="wrap">
+      <div class="author">
+        <div class="avatar" aria-hidden="true" style="font-family:'DM Serif Display',serif; font-size:2rem; letter-spacing:.03em; color:var(--gold-lite);">ÉF</div>
+        <div>
+          <h3>Élton Feroz</h3>
+          <p class="role">Estrategista Digital &middot; Líder da Alcateia de Leões</p>
+          <p>Ajudo terapeutas holísticos a alcançar visão e clareza mental para vender online todos os dias — convertendo terapias em produtos digitais escaláveis, sem precisar postar toda hora. Criei a Realeza Holística porque seu atendimento merece um negócio à altura dele.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Seu propósito merece <em>prosperar</em>.</h2>
+      <p class="lede">Você já domina a arte de cuidar. Agora é hora do seu negócio cuidar de você — com liberdade, equilíbrio e abundância.</p>
+      <a class="btn btn-gold" href="https://wa.me/5551982276577?text=Oi%20Elton!%20Vim%20pela%20pagina%20da%20Realeza%20Holistica%20e%20quero%20ter%20mais%20tempo%20livre" target="_blank" rel="noopener">Quero minha vaga na Realeza Holística</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="name">Realeza Holística</div>
+      <p class="meta">Élton Longaray &middot; <a href="https://instagram.com/eltonlongaray">@eltonlongaray</a> &middot; Alcateia de Leões</p>
+      <p class="meta" style="opacity:.65; margin-top:1rem; font-size:.78rem;">Viva seu propósito através do digital, com equilíbrio e abundância.</p>
+    </div>
+  </footer>
+
+</main>

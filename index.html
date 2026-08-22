@@ -169,11 +169,18 @@
   .permuta-box p strong{ color:var(--gold-lite); font-weight:700; }
   .permuta-box .sub{ margin-top:.55rem; font-size:.88rem; color:var(--muted); }
   /* linha de pilar em permuta (pacote de massagens) */
-  .reveal .pl.pacote{ opacity:.85; }
+  .reveal .pl .k{ min-width:0; }
+  .reveal .pl.pacote{ flex-wrap:wrap; opacity:.85; }
+  .reveal .pl.pacote .k{ flex:1 1 auto; }
   .reveal .pl.pacote .k s{ color:var(--muted); text-decoration-color:var(--line-2); }
-  .reveal .pl.pacote .v{ text-align:right; font-weight:400; }
+  .reveal .pl.pacote .v{ flex:0 0 auto; text-align:right; font-weight:400; }
   .reveal .pl.pacote .v s{ color:var(--muted); text-decoration-color:var(--line-2); }
-  .reveal .pl.pacote .v .pk{ display:block; color:var(--gold-lite); font-weight:700; font-size:.78rem; letter-spacing:.02em; margin-top:.15rem; }
+  .reveal .pl.pacote .pk{ flex:1 0 100%; text-align:right; color:var(--gold-lite); font-weight:700; font-size:.8rem; letter-spacing:.02em; margin-top:.2rem; }
+  @media (max-width:480px){
+    .offer{ padding-left:1.1rem; padding-right:1.1rem; }
+    .reveal summary{ padding-left:1.1rem; padding-right:1.1rem; }
+    .reveal .panel{ padding-left:1.1rem; padding-right:1.1rem; }
+  }
   /* caixa de bônus com destaque */
   .bonusbox{ margin-top:1.4rem; border:1px solid var(--gold); border-radius:16px; background:radial-gradient(120% 100% at 50% 0%, rgba(217,169,75,.16), rgba(217,169,75,.06)); padding:1.2rem 1.3rem; }
   .bonusbox .bonuslbl{ font-family:"DM Serif Display",serif; color:var(--gold-lite); font-size:1.2rem; margin-bottom:.7rem; }
@@ -517,9 +524,9 @@
           <div class="panel">
             <div class="grp">
               <p class="lbl">O valor de cada um dos 6 pilares</p>
-              <div class="pl pacote"><span class="k"><s>1 &middot; Identidade de marca</s></span><span class="v"><s>R$ 1.500</s><span class="pk">Pacote de Massagens</span></span></div>
-              <div class="pl pacote"><span class="k"><s>2 &middot; Mecanismo de vendas</s></span><span class="v"><s>R$ 1.500</s><span class="pk">Pacote de Massagens</span></span></div>
-              <div class="pl pacote"><span class="k"><s>3 &middot; Posicionamento</s></span><span class="v"><s>R$ 2.000</s><span class="pk">Pacote de Massagens</span></span></div>
+              <div class="pl pacote"><span class="k"><s>1 &middot; Identidade de marca</s></span><span class="v"><s>R$ 1.500</s></span><span class="pk">Pacote de Massagens</span></div>
+              <div class="pl pacote"><span class="k"><s>2 &middot; Mecanismo de vendas</s></span><span class="v"><s>R$ 1.500</s></span><span class="pk">Pacote de Massagens</span></div>
+              <div class="pl pacote"><span class="k"><s>3 &middot; Posicionamento</s></span><span class="v"><s>R$ 2.000</s></span><span class="pk">Pacote de Massagens</span></div>
               <div class="pl"><span class="k">4 &middot; Produto high ticket</span><span class="v">R$ 2.500</span></div>
               <div class="pl"><span class="k">5 &middot; Produto de entrada</span><span class="v">R$ 2.500</span></div>
               <div class="pl"><span class="k">6 &middot; Jornada de vendas</span><span class="v">R$ 5.000</span></div>

@@ -129,7 +129,7 @@
   .topic h3{ font-size:1.12rem; margin-bottom:.25rem; }
   .topic p{ color:var(--muted); font-size:.96rem; }
   /* bloco revelável — valor do método completo */
-  .reveal{ max-width:40rem; margin:1.6rem auto 0; border:1px solid var(--line-2); border-radius:16px; background:var(--night-2); overflow:hidden; }
+  .reveal{ max-width:none; margin:1.6rem auto 0; border:1px solid var(--line-2); border-radius:16px; background:var(--night-2); overflow:hidden; }
   .reveal summary{ cursor:pointer; list-style:none; padding:1.1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; font-weight:700; color:var(--gold-lite); font-size:1.02rem; }
   .reveal summary::-webkit-details-marker{ display:none; }
   .reveal summary::after{ content:"+"; font-family:"DM Serif Display",serif; font-size:1.5rem; color:var(--gold); line-height:1; }
@@ -172,13 +172,15 @@
   .reveal .pl .k{ min-width:0; }
   .reveal .pl.pacote{ align-items:flex-start; }
   .reveal .pl.pacote .k{ flex:1 1 auto; color:var(--ivory); }
-  .reveal .pl.pacote .vbox{ flex:0 0 auto; max-width:56%; display:flex; flex-direction:column; align-items:flex-end; text-align:right; }
+  .reveal .pl.pacote .vbox{ flex:0 0 auto; max-width:48%; display:flex; flex-direction:column; align-items:flex-end; text-align:right; }
+  .offer .cta-row .btn{ width:100%; max-width:28rem; justify-content:center; }
   .reveal .pl.pacote .vbox s{ color:var(--muted); text-decoration-color:var(--line-2); font-weight:400; }
   .reveal .pl.pacote .pk{ color:var(--gold-lite); font-weight:700; font-size:1rem; letter-spacing:.01em; margin-top:.3rem; }
   @media (max-width:480px){
-    .offer{ padding-left:1.1rem; padding-right:1.1rem; }
-    .reveal summary{ padding-left:1.1rem; padding-right:1.1rem; }
-    .reveal .panel{ padding-left:1.1rem; padding-right:1.1rem; }
+    .wrap{ padding-left:1rem; padding-right:1rem; }
+    .offer{ padding-left:1rem; padding-right:1rem; }
+    .reveal summary{ padding-left:1rem; padding-right:1rem; }
+    .reveal .panel{ padding-left:1rem; padding-right:1rem; }
   }
   /* caixa de bônus com destaque */
   .bonusbox{ margin-top:1.4rem; border:1px solid var(--gold); border-radius:16px; background:radial-gradient(120% 100% at 50% 0%, rgba(217,169,75,.16), rgba(217,169,75,.06)); padding:1.2rem 1.3rem; }
@@ -257,7 +259,7 @@
   .offer{ background:
       radial-gradient(80% 120% at 50% 0%, rgba(217,169,75,.14), rgba(217,169,75,0) 55%),
       linear-gradient(180deg,var(--night-3),var(--night-2)); border:1px solid var(--line-2); border-radius:26px;
-    padding:clamp(2rem,5vw,3.4rem); max-width:44rem; margin-inline:auto; }
+    padding:clamp(1.6rem,5vw,3.2rem); max-width:52rem; margin-inline:auto; }
   .ledger{ display:flex; flex-direction:column; gap:.2rem; margin:1.5rem 0; }
   .ledger .li{ display:flex; justify-content:space-between; gap:1rem; align-items:baseline; padding:.7rem 0; border-bottom:1px solid var(--line); font-size:1rem; }
   .ledger .li span:first-child{ color:var(--ivory-dim); }

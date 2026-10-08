@@ -8,7 +8,7 @@
 <meta property="og:title" content="Élton Longaray · Marketing e Desenvolvimento">
 <meta property="og:description" content="Criação de marcas únicas e sistemas de gestão e automação sob medida.">
 <meta property="og:type" content="website">
-<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}</style>
+<style>html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}body{margin:0}img{max-width:100%}</style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,6 +139,41 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
   .obj{gap:4px}
   .offer{grid-template-columns:1fr}
 }
+
+/* blocos separados */
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.jump a{text-decoration:none;border-radius:999px;padding:10px 18px;font-weight:600;font-family:var(--display)}
+.jump .j-mk{background:#FF6A3D;color:#fff}
+.jump .j-dev{background:#0F8F84;color:#fff}
+.block{padding-block:56px}
+.block + .block{border-top:0}
+.block.mk{--c:var(--accent);--c-soft:var(--accent-soft)}
+.block.dev{--c:var(--teal);--c-soft:var(--teal-soft);background:var(--surface)}
+.bhead{display:grid;gap:12px;margin-bottom:30px}
+.bhead .eyebrow{color:var(--c)}
+.bhead h2{font-size:clamp(1.9rem,5vw,2.7rem)}
+.bhead .sum{font-size:1.1rem;color:var(--muted);max-width:60ch}
+.pill{justify-self:start;background:var(--c-soft);color:var(--c);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+.sub{font-family:var(--display);font-weight:700;font-size:1.15rem;margin:30px 0 14px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.item{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:4px;min-width:0}
+.block.mk .item{background:var(--surface)}
+.item strong{font-family:var(--display);font-size:1.02rem}
+.item span{color:var(--muted);font-size:.95rem}
+.item.hl{background:var(--c-soft);border-color:transparent}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:f}
+.flow li{counter-increment:f;display:grid;gap:6px;align-content:start;min-width:0}
+.flow li::before{content:counter(f);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--c);color:#fff;font-family:var(--display);font-weight:800}
+.flow strong{font-family:var(--display)}
+.flow span{color:var(--muted);font-size:.93rem}
+.who{display:flex;flex-wrap:wrap;gap:8px}
+.who span{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.92rem}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.case{border-left:4px solid var(--c);padding:4px 0 4px 16px;display:grid;gap:4px;min-width:0}
+.case span.st{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--c)}
+.case p{color:var(--muted);font-size:.95rem}
+.case blockquote{margin:4px 0 0;font-style:italic;font-size:.93rem}
+@media (max-width:640px){.grid2,.cases{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -146,117 +181,84 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Gestor de negócios digitais · Porto Alegre</div>
-    <h1>Élton Longaray<br><span>marca e sistema</span> pro teu negócio crescer.</h1>
-    <p class="lead">Eu trabalho em duas frentes: construo marcas únicas que vendem e desenvolvo sistemas sob medida que economizam tempo e dinheiro.</p>
-    <div class="tags"><span>Marketing</span><span>Desenvolvimento</span></div>
+    <h1>Élton Longaray</h1>
+    <p class="lead">Trabalho em duas frentes: construo marcas que vendem e desenvolvo sistemas sob medida que economizam tempo e dinheiro.</p>
+    <nav class="jump" aria-label="Serviços"><a class="j-mk" href="#marketing">Marketing</a><a class="j-dev" href="#desenvolvimento">Desenvolvimento</a></nav>
   </div>
 </header>
 
 <main>
-<section>
+<section class="block mk" id="marketing">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Serviços</div>
-      <h2>O que eu faço</h2>
+    <div class="bhead">
+      <div class="eyebrow">Marketing</div>
+      <h2>Criação de marcas únicas</h2>
+      <p class="sum">Uma mentoria que coloca a pessoa no caminho certo para andar com as próprias pernas.</p>
+      <span class="pill">Mentoria de 4 meses</span>
     </div>
-    <div class="services">
-      <article class="svc mk">
-        <span class="kind">Marketing</span>
-        <h3>Criação de marcas únicas</h3>
-        <p class="sum">Uma mentoria de 4 meses que coloca a pessoa no caminho certo para andar com as próprias pernas.</p>
-        <ul>
-          <li>Identidade de marca</li>
-          <li>Comunicação holística</li>
-          <li>Criação da esteira de produtos</li>
-          <li>Conteúdo único com funil de vendas integrado</li>
-        </ul>
-        <p class="note">Um único post pensado para gerar diversas vendas.</p>
-      </article>
-      <article class="svc dev">
-        <span class="kind">Desenvolvimento</span>
-        <h3>Sistemas de gestão e automação</h3>
-        <p class="sum">Foco em reduzir custo de tempo e financeiro, com ferramentas criadas sob medida para cada negócio.</p>
-        <ul>
-          <li>Sistemas de gestão (estoque, pedidos, financeiro, clientes)</li>
-          <li>Agenda online com aviso automático no WhatsApp</li>
-          <li>Cobrança automática por Pix</li>
-          <li>Automações e assistentes com Inteligência Artificial</li>
-        </ul>
-        <p class="note">Nada de sistema pronto que não encaixa: a ferramenta nasce da rotina do negócio.</p>
-      </article>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Pra quem</div>
-      <h2>Negócios que querem crescer sem depender só do dono</h2>
-      <p>Terapeutas, massoterapeutas, personal trainers, nutricionistas, estética, oficinas e prestadores de serviço.</p>
+    <div class="sub">O que a mentoria inclui</div>
+    <div class="grid2">
+      <div class="item"><strong>Identidade de marca</strong><span>Quem tu é, o que te diferencia e como tu quer ser lembrado.</span></div>
+      <div class="item"><strong>Comunicação holística</strong><span>Uma mensagem coerente em tudo que a marca fala e mostra.</span></div>
+      <div class="item"><strong>Esteira de produtos</strong><span>Do produto de entrada até o principal, cada um levando ao próximo.</span></div>
+      <div class="item"><strong>Conteúdo com funil integrado</strong><span>Conteúdo único, pensado pra levar o seguidor até a compra.</span></div>
+      <div class="item hl" style="grid-column:1/-1"><strong>Um único post para diversas vendas</strong><span>Conteúdo que continua vendendo depois de publicado.</span></div>
     </div>
-    <div class="signals">
-      <div>Posto todo dia e não vendo.</div>
-      <div>Não sei como me diferenciar dos outros.</div>
-      <div>Estou lotado e quero ir pro digital.</div>
-      <div>Minha agenda é no caderno ou na cabeça.</div>
-      <div>Perco cliente porque demoro pra responder.</div>
-      <div>Faço tudo na mão e não sobra tempo pra crescer.</div>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Como funciona</div>
-      <h2>Tu vê o caminho antes de começar</h2>
-    </div>
-    <ol class="steps">
-      <li><div><h3>Conversa</h3><p>Entendo o teu negócio, teus clientes e onde estão os gargalos.</p></div></li>
-      <li><div><h3>Diagnóstico e proposta</h3><p>Mostro o que precisa ser feito, com escopo, prazo e valor claros. No desenvolvimento, tu vê um protótipo funcionando antes de fechar.</p></div></li>
-      <li><div><h3>Execução</h3><p>Marketing: encontros da mentoria ao longo de 4 meses. Desenvolvimento: entrega por etapas, com tu testando cada parte.</p></div></li>
-      <li><div><h3>Acompanhamento</h3><p>Suporte e melhorias contínuas pra marca e o sistema seguirem funcionando.</p></div></li>
+    <div class="sub">Pra quem é</div>
+    <div class="who"><span>Terapeutas</span><span>Massoterapeutas</span><span>Terapeutas holísticos</span><span>Profissionais liberais</span><span>Quem quer levar o trabalho pro digital</span></div>
+
+    <div class="sub">Como funciona</div>
+    <ol class="flow">
+      <li><strong>Diagnóstico</strong><span>Onde a marca está e onde quer chegar.</span></li>
+      <li><strong>Marca</strong><span>Identidade, posicionamento e mensagem.</span></li>
+      <li><strong>Produtos e funil</strong><span>Esteira de produtos e caminho de venda.</span></li>
+      <li><strong>Autonomia</strong><span>Conteúdo rodando com a pessoa no comando.</span></li>
     </ol>
+
+    <div class="sub">Projetos</div>
+    <div class="cases">
+      <div class="case"><span class="st">No ar</span><strong>Realeza Holística</strong><p>Método próprio de marca e funil para terapeutas holísticos. <a href="https://eltonlongaray.github.io/realeza-holistica/" target="_blank" rel="noopener">Ver página</a></p></div>
+      <div class="case"><span class="st">Em andamento</span><strong>Massoterapeuta · Porto Alegre</strong><p>Marca, método do curso e campanha de lançamento de uma profissional que vai levar o trabalho pro digital.</p></div>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="block dev" id="desenvolvimento">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Projetos</div>
-      <h2>Alguns trabalhos</h2>
+    <div class="bhead">
+      <div class="eyebrow">Desenvolvimento</div>
+      <h2>Sistemas de gestão e automação</h2>
+      <p class="sum">Foco em reduzir custo de tempo e financeiro, com ferramentas criadas sob medida para cada negócio.</p>
+      <span class="pill">Sob medida</span>
     </div>
-    <div class="proofs">
-      <article class="proof wide">
-        <span class="badge b-live">No ar</span>
-        <h3>Estilo Falcon · aplicativo próprio</h3>
-        <p>App de desenvolvimento pessoal com rotina, agenda, comunidade, agenda online pública com aviso no WhatsApp, rifa com Pix automático e assistente com Inteligência Artificial.</p>
-        <p><a href="https://estilo-falcon.web.app" target="_blank" rel="noopener">estilo-falcon.web.app</a></p>
-      </article>
-      <article class="proof">
-        <span class="badge b-proto">Protótipo aprovado</span>
-        <h3>Armeria Esparta · sistema de gestão</h3>
-        <p>Sistema desenhado para uma oficina: estoque com peça livre, reservada ou instalada, alerta de estoque baixo, pedidos e financeiro.</p>
-        <p><a href="https://eltonlongaray.github.io/armeria-esparta/" target="_blank" rel="noopener">Ver protótipo</a></p>
-      </article>
-      <article class="proof">
-        <span class="badge b-prog">Em andamento</span>
-        <h3>Massoterapeuta · marca e lançamento</h3>
-        <p>Construção da marca, do método do curso e da campanha de lançamento de uma profissional que quer levar o trabalho pro digital.</p>
-      </article>
-      <article class="proof">
-        <span class="badge b-live">No ar</span>
-        <h3>Realeza Holística · método de marca</h3>
-        <p>Método próprio de marca e funil para terapeutas holísticos.</p>
-        <p><a href="https://eltonlongaray.github.io/realeza-holistica/" target="_blank" rel="noopener">Ver página</a></p>
-      </article>
-      <article class="proof">
-        <span class="badge b-live">Avaliado por empresa</span>
-        <h3>FIAP · Inteligência Artificial</h3>
-        <p>Desafios reais trazidos por empresas parceiras. Num deles, com a Sompo Seguros (trabalho em grupo):</p>
-        <blockquote>"uma das integrações mais completas e bem governadas que avaliamos"</blockquote>
-      </article>
+
+    <div class="sub">O que eu desenvolvo</div>
+    <div class="grid2">
+      <div class="item"><strong>Sistemas de gestão</strong><span>Estoque, pedidos, financeiro e clientes num lugar só.</span></div>
+      <div class="item"><strong>Agenda online</strong><span>O cliente marca sozinho e tu recebe o aviso no WhatsApp.</span></div>
+      <div class="item"><strong>Cobrança automática</strong><span>Pix gerado e confirmado sem ninguém conferir na mão.</span></div>
+      <div class="item"><strong>Automação e IA</strong><span>Tarefas repetitivas feitas sozinhas e assistentes que entendem o que a pessoa fala.</span></div>
+      <div class="item hl" style="grid-column:1/-1"><strong>Nada de sistema pronto que não encaixa</strong><span>A ferramenta nasce da rotina do negócio.</span></div>
+    </div>
+
+    <div class="sub">Pra quem é</div>
+    <div class="who"><span>Oficinas</span><span>Clínicas e estúdios</span><span>Prestadores de serviço</span><span>Comércio local</span><span>Quem faz tudo na mão</span></div>
+
+    <div class="sub">Como funciona</div>
+    <ol class="flow">
+      <li><strong>Conversa</strong><span>Entendo onde a operação perde tempo e dinheiro.</span></li>
+      <li><strong>Protótipo</strong><span>Tu vê funcionando antes de fechar.</span></li>
+      <li><strong>Proposta</strong><span>Módulos, prazo e valor claros.</span></li>
+      <li><strong>Entrega e suporte</strong><span>Por etapas, com manutenção depois.</span></li>
+    </ol>
+
+    <div class="sub">Projetos</div>
+    <div class="cases">
+      <div class="case"><span class="st">No ar</span><strong>Estilo Falcon · app próprio</strong><p>Rotina, agenda online com aviso no WhatsApp, rifa com Pix automático e assistente com IA. <a href="https://estilo-falcon.web.app" target="_blank" rel="noopener">Abrir app</a></p></div>
+      <div class="case"><span class="st">Protótipo aprovado</span><strong>Armeria Esparta · oficina</strong><p>Estoque com peça livre, reservada ou instalada, pedidos e financeiro. <a href="https://eltonlongaray.github.io/armeria-esparta/" target="_blank" rel="noopener">Ver protótipo</a></p></div>
+      <div class="case" style="grid-column:1/-1"><span class="st">Avaliado por empresa</span><strong>FIAP · Inteligência Artificial</strong><p>Desafio real com a Sompo Seguros (trabalho em grupo).</p><blockquote>"uma das integrações mais completas e bem governadas que avaliamos"</blockquote></div>
     </div>
   </div>
 </section>

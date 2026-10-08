@@ -173,6 +173,19 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
 .case span.st{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--c)}
 .case p{color:var(--muted);font-size:.95rem}
 .case blockquote{margin:4px 0 0;font-style:italic;font-size:.93rem}
+
+.present{display:grid;gap:12px}
+.pstep{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.pstep b{font-family:var(--display);color:var(--c);font-size:1.3rem;line-height:1.2}
+.pstep div{display:grid;gap:4px;min-width:0}
+.pstep strong{font-family:var(--display)}
+.pstep span{color:var(--muted);font-size:.95rem}
+.pstep em{color:var(--ink);font-style:normal;font-weight:500}
+.script{background:var(--c);color:#fff;border-radius:14px;padding:20px 22px;display:grid;gap:8px}
+.script .lbl{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.85}
+.script p{font-size:1.05rem;font-weight:500;line-height:1.5}
+.avoid{display:flex;flex-wrap:wrap;gap:8px}
+.avoid span{background:var(--bg);border:1px dashed var(--line);border-radius:999px;padding:5px 12px;font-size:.9rem;color:var(--muted)}
 @media (max-width:640px){.grid2,.cases{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -253,6 +266,22 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
       <li><strong>Proposta</strong><span>Módulos, prazo e valor claros.</span></li>
       <li><strong>Entrega e suporte</strong><span>Por etapas, com manutenção depois.</span></li>
     </ol>
+
+
+    <div class="sub">Como apresentar esse trabalho pro cliente</div>
+    <div class="present">
+      <div class="pstep"><b>1</b><div><strong>Começa pela dor, não pela tecnologia</strong><span>Pergunta: <em>"Onde tu mais perde tempo no dia a dia?"</em> ou <em>"O que tu ainda controla no caderno, na planilha ou de cabeça?"</em></span></div></div>
+      <div class="pstep"><b>2</b><div><strong>Traduz em ganho</strong><span>Fala do resultado: horas economizadas, erro que não acontece mais, cliente que não se perde, dinheiro que entra sem conferir na mão.</span></div></div>
+      <div class="pstep"><b>3</b><div><strong>Mostra um exemplo funcionando</strong><span>Agenda online com aviso no WhatsApp (Estilo Falcon) ou controle de estoque e pedidos (Armeria). Ver funcionando convence mais que explicar.</span></div></div>
+      <div class="pstep"><b>4</b><div><strong>Convida pra um diagnóstico</strong><span>Uma conversa com o Élton, sem compromisso. Ele entende a rotina e volta com um protótipo pro cliente ver antes de decidir.</span></div></div>
+      <div class="pstep"><b>5</b><div><strong>Preço só depois do diagnóstico</strong><span>Cada sistema é sob medida. O valor vem numa proposta por módulos, então o cliente pode começar pelo que dá resultado mais rápido.</span></div></div>
+    </div>
+    <div class="script" style="margin-top:14px">
+      <span class="lbl">Frase pronta</span>
+      <p>"O Élton cria sistemas sob medida que tiram o trabalho manual do teu negócio. Ele entende onde tu perde tempo, te mostra um protótipo funcionando e só depois tu decide."</p>
+    </div>
+    <div class="sub" style="margin-top:20px;font-size:1rem">Evita</div>
+    <div class="avoid"><span>Falar de linguagem de programação</span><span>Prometer prazo ou preço antes da conversa</span><span>Oferecer sistema pronto de prateleira</span></div>
 
     <div class="sub">Projetos</div>
     <div class="cases">

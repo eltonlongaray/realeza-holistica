@@ -208,6 +208,16 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
 .shift span:not(.lbl){color:var(--muted);font-size:.93rem}
 .shift .arrow{display:grid;place-items:center;font-size:1.8rem;color:var(--c);font-weight:800}
 .extra{margin-top:14px;color:var(--muted);max-width:68ch}
+.focus{display:grid;grid-template-columns:3fr 2fr;gap:12px}
+.focus>div{border-radius:12px;padding:18px;display:grid;gap:4px;align-content:start;min-width:0}
+.focus .main{background:var(--c);color:#fff}
+.focus .main span:not(.lbl){color:rgba(255,255,255,.9);font-size:.95rem}
+.focus .also{background:var(--surface);border:1px solid var(--line)}
+.focus .also span:not(.lbl){color:var(--muted);font-size:.95rem}
+.focus .lbl{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.focus .also .lbl{color:var(--c)}
+.focus strong{font-family:var(--display);font-size:1.15rem}
+@media (max-width:640px){.focus{grid-template-columns:1fr}}
 @media (max-width:640px){.pillars{grid-template-columns:1fr}.shift{grid-template-columns:1fr}.shift .arrow{transform:rotate(90deg)}}
 </style>
 </head>
@@ -228,7 +238,7 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
     <div class="bhead">
       <div class="eyebrow">Marketing</div>
       <h2>Criação de marcas únicas</h2>
-      <p class="sum">Uma mentoria individual que coloca a pessoa no caminho certo para andar com as próprias pernas: sai do atendimento um a um e passa a vender no digital todos os dias.</p>
+      <p class="sum">Uma mentoria individual que transforma o conhecimento do terapeuta holístico numa esteira de produtos digitais que vende no automático, do produto de entrada ao high ticket. A pessoa sai do atendimento um a um e aprende a andar com as próprias pernas.</p>
       <span class="pill">4 meses · 6 pilares · 16 semanas</span>
     </div>
 
@@ -266,7 +276,10 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
     <p class="extra">Acompanhamento de 4 meses com suporte por WhatsApp e videochamada. No fim, a pessoa sai com a landing page profissional no ar e um roteiro de direct pra transformar seguidor em cliente.</p>
 
     <div class="sub">Pra quem é</div>
-    <div class="who"><span>Terapeutas holísticos</span><span>Massoterapeutas</span><span>Profissionais de saúde e bem-estar</span><span>Quem quer levar o atendimento pro digital</span></div>
+    <div class="focus">
+      <div class="main"><span class="lbl">Foco principal</span><strong>Terapeutas holísticos</strong><span>Massoterapeutas, reikianos, terapeutas integrativos e profissionais de bem-estar que querem transformar o que sabem em produtos digitais.</span></div>
+      <div class="also"><span class="lbl">Também serve pra</span><strong>Qualquer negócio que precisa vender melhor</strong><span>O método de marca, mecanismo de vendas, esteira e funil se aplica a qualquer tipo de serviço e também a quem vende produto físico.</span></div>
+    </div>
 
     <div class="sub">Projetos</div>
     <div class="cases">

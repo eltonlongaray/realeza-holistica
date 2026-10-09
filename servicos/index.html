@@ -219,6 +219,24 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
 .focus strong{font-family:var(--display);font-size:1.15rem}
 @media (max-width:640px){.focus{grid-template-columns:1fr}}
 @media (max-width:640px){.pillars{grid-template-columns:1fr}.shift{grid-template-columns:1fr}.shift .arrow{transform:rotate(90deg)}}
+
+.fiap{display:grid;gap:10px;max-width:68ch;margin-bottom:16px}
+.fiap p{color:var(--muted)}
+.fiap strong{color:var(--ink)}
+.acc{display:grid;gap:10px}
+.acc details{background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.acc details[open]{border-color:var(--c)}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center;padding:16px 18px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";grid-row:1/3;grid-column:2;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--c-soft);color:var(--c);font-weight:800;font-size:1.2rem;transition:transform .2s}
+.acc details[open] summary::after{content:"−"}
+.acc summary:focus-visible{outline:3px solid var(--c);outline-offset:-3px}
+.acc .st{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--c)}
+.acc summary strong{font-family:var(--display);font-size:1.05rem}
+.acc-body{padding:0 18px 18px;display:grid;gap:12px}
+.acc-body p{color:var(--muted);font-size:.96rem}
+.btn{justify-self:start;background:var(--c);color:#fff;text-decoration:none;border-radius:999px;padding:9px 18px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.acc summary::after{transition:none}}
 </style>
 </head>
 <body>
@@ -338,11 +356,39 @@ footer strong{color:var(--ink);font-family:var(--display);font-size:1.2rem}
     <div class="avoid"><span>Falar de linguagem de programação</span><span>Prometer prazo ou preço antes da conversa</span><span>Oferecer sistema pronto de prateleira</span></div>
 
     <div class="sub">Projetos</div>
-    <div class="cases">
-      <div class="case"><span class="st">No ar</span><strong>Estilo Falcon · app próprio</strong><p>Rotina, agenda online com aviso no WhatsApp, rifa com Pix automático e assistente com IA. <a href="https://estilo-falcon.web.app" target="_blank" rel="noopener">Abrir app</a></p></div>
-      <div class="case"><span class="st">Protótipo aprovado</span><strong>Armeria Esparta · oficina</strong><p>Estoque com peça livre, reservada ou instalada, pedidos e financeiro. <a href="https://eltonlongaray.github.io/armeria-esparta/" target="_blank" rel="noopener">Ver protótipo</a></p></div>
-      <div class="case" style="grid-column:1/-1"><span class="st">Avaliado por empresa</span><strong>FIAP · Inteligência Artificial</strong><p>Desafio real com a Sompo Seguros (trabalho em grupo).</p><blockquote>"uma das integrações mais completas e bem governadas que avaliamos"</blockquote></div>
+    <div class="fiap">
+      <p>Sou aluno de Inteligência Artificial na <strong>FIAP</strong>, uma das maiores faculdades de tecnologia do Brasil. Lá, empresas parceiras trazem problemas reais e a gente resolve. Junto com meus colegas, já desenvolvi projetos para empresas dos setores espacial, rural e de seguros, com sistemas completos de automação e IA.</p>
+      <p>Fora da faculdade, desenhei e prototipei o sistema de gestão de uma oficina real, a Armeria Esparta.</p>
     </div>
+    <div class="acc">
+      <details open>
+        <summary><span class="st">Protótipo aprovado</span><strong>Armeria Esparta · sistema de gestão de oficina</strong></summary>
+        <div class="acc-body">
+          <p>A oficina vendia a mesma peça para dois clientes porque o estoque era controlado de cabeça. O sistema resolve isso: cada peça tem status (livre, reservada ou instalada) e local, com alerta de estoque baixo, esteira de pedidos do orçamento à entrega e controle financeiro. A proposta de 13 módulos foi aprovada pelo dono.</p>
+          <a class="btn" href="https://eltonlongaray.github.io/armeria-esparta/" target="_blank" rel="noopener">Ver o protótipo</a>
+        </div>
+      </details>
+      <details>
+        <summary><span class="st">No ar</span><strong>Estilo Falcon · aplicativo próprio</strong></summary>
+        <div class="acc-body">
+          <p>App de desenvolvimento pessoal que eu criei e mantenho. Tem rotina e agenda, comunidade com chat, agenda online pública em que o cliente marca sozinho e o profissional recebe aviso no WhatsApp, rifa com Pix automático e um assistente com IA própria que entende o que a pessoa fala e executa no app.</p>
+          <a class="btn" href="https://estilo-falcon.web.app" target="_blank" rel="noopener">Abrir o app</a>
+        </div>
+      </details>
+      <details>
+        <summary><span class="st">FIAP · seguros</span><strong>AgroRisk · risco agrícola com a Sompo Seguros</strong></summary>
+        <div class="acc-body">
+          <p>Sistema de análise de risco agrícola desenvolvido em grupo para a Sompo Seguros. Os dados entram, passam por validação, vão pro banco e alimentam um modelo de IA que gera alertas numa interface, com acesso por perfil e registro de tudo que acontece. A avaliação foi: "uma das integrações mais completas e bem governadas que avaliamos".</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="st">FIAP · rural</span><strong>FarmTech · agricultura com machine learning</strong></summary>
+        <div class="acc-body">
+          <p>Projeto de agricultura inteligente desenvolvido em grupo, com irrigação, modelos de machine learning para previsão e cálculo de custo de infraestrutura na nuvem (AWS). Nota 24,98 de 27.</p>
+        </div>
+      </details>
+    </div>
+  </div>
   </div>
 </section>
 </main>
